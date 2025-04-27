@@ -1,0 +1,198 @@
+body{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    background: rgb(200, 208, 216);
+}
+.wrapper{
+    /* border: 1px solid; */
+    max-width: 1250px;
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: 20px;
+    padding-right: 20px;
+    position: relative;
+    /* top: 30px */
+}
+.form-container{
+   
+    width: 100%;
+}
+
+.input-fields{
+    
+    /* border: 1px solid; */
+    width: 250px;
+    height: 100%;
+    display: block;
+    margin: auto;
+    
+}
+
+.form-container .input-fields .input-field {
+    width: 250px;
+    height: 45px;
+    border: 0.6mm solid black;
+    background: white;
+    outline: none;
+    box-sizing: border-box;
+    padding: 0 15px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    padding-right: 45px;
+    font-size: 14px;
+    font-weight: 500;
+    transition: 0.2s;
+    margin-bottom: 10px;
+    margin-top: 5px;
+}
+.input-field:focus{
+    box-shadow: 5px 5px 0 black;
+    /* border: 1px solid dodgerblue; */
+    /* outline: 3px solid dodgerblue; */
+}
+.form-container input:focus::placeholder{
+    color: rgb(178, 173, 178);
+}
+.form-container input[type='radio']:active, input[type="radio"]:hover {
+    outline: none;
+    border: none;
+}
+/* .wave-button{
+} */
+.wave-button button{
+    position: relative;
+    width: 250px;
+    height: 60px;
+    background: rgb(255, 185, 0);
+    border: 0.5mm solid black;
+    border-radius: 5mm;
+    box-shadow: 3px 3px 0 black;
+    cursor: pointer;
+    overflow: hidden;
+    transition: 0.3s;
+}
+.wave-button{
+    margin-top: 5px;
+    margin-bottom: 5px;
+    /* display: flex;
+    flex-direction: column;
+    align-items: center; */
+}
+.wave-button .text{
+    font-size: 22px;
+    font-weight: bold;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    z-index: 1;
+    position: relative;
+}
+.wave-button .wave{
+    position: absolute;
+    width: 100%;
+    height: 50%;
+    background: url(./wave.svg);
+    background-size: 200% 100%;
+    top: 100%;
+    left: 0;
+    animation: wave 2s linear infinite;
+    transition: 0.5s;
+}
+@keyframes wave{
+    from{
+        background-position-x: 0;
+    }
+    to{
+        background-position-x: 200%;
+    }
+}
+.wave-button button:hover .wave{
+    top: 50%;
+}
+.wave-button button:hover{
+    box-shadow: 6px 6px 0 black;
+}
+
+.card{
+    /* border: 1px solid rgb(62, 58, 58); */
+    width: 90%;
+    background: rgb(9, 11, 12);
+    color: white;
+    height: 250px;
+    padding: 10px;
+    margin: 3px;
+    border-radius: 10px;
+    transition: 0.2s linear;
+    overflow: hidden;
+    text-align: center;
+    animation: apear linear;
+    animation-timeline: view();
+    animation-range: entry 0 cover 30%;
+}
+.card:hover{
+    box-shadow: 0px 0px 90px 0.1px  rgb(235, 199, 100);
+}
+
+.card .name{
+    font-size: 22px;
+    font-weight: bold;
+    text-transform: capitalize;
+}
+.card .email{
+    font-size: 13px;
+    font-weight: bold;
+    color: dodgerblue;
+}
+.card .gender{
+    font-size: 16px;
+    font-weight: bold;
+}
+.card .user{
+    color: rgb(178, 177, 177);
+
+}
+.card-container{
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 5px;
+    justify-content: center;
+    margin-top: 30px;
+    width: 100%;
+    
+}
+
+@keyframes apear{
+    from{
+        opacity: 0;
+        scale: 0.1;
+    }
+    to{
+        opacity: 1;
+        scale: 1;
+    }
+}
+
+@media screen and (min-width: 590px) {
+    .card-container{
+        display: grid;
+        grid-template-columns: 1fr 1fr ;
+        gap: 30px;
+    }
+}
+@media screen and (min-width: 860px) {
+    .card-container{
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+        gap: 30px;
+    }
+}
+@media screen and (min-width: 1150px) {
+    .card-container{
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr 1fr;
+        gap: 30px;
+    }
+}
+.input-fields small{
+    color: red;
+    text-transform: capitalize;
+    
+}
